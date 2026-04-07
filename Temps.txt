@@ -1,1 +1,245 @@
+القوالب الكامل للاختبار العملي
 
+🔴 = أساس (لا يتغير، احفظه)
+🟡 = فهم (الهيكل يبقى، لكن القيم تتغير)
+🟢 = يتغير (حسب السؤال)
+
+========================================
+
+القالب 1: حساب التكلفة
+========================================
+
+🔴 private void button_Click(object sender, EventArgs e)
+🔴 {
+    // 1. 🔴 قراءة المدخلات
+    🔴 int quantity = int.Parse(textBox1.Text);
+    🔴 string type = textBox2.Text;
+    
+    // 2. 🟢 المعالجة
+    🟢 int price = 0;
+    🟡 if (type == "VIP") price = 500;
+    🟡 else if (type == "IP") price = 300;
+    🟡 else if (type == "P") price = 100;
+    🟢 int total = quantity * price;
+    
+    // 3. 🔴 عرض النتيجة
+    🔴 MessageBox.Show("Total: " + total);
+🔴 }
+
+========================================
+القالب 2: تصنيف (if/else)
+========================================
+
+🔴 private void button_Click(object sender, EventArgs e)
+🔴 {
+    // 1. 🔴 قراءة المدخلات
+    🔴 int value = int.Parse(textBox1.Text);
+    
+    // 2. 🟢 المعالجة
+    🟢 string result = "";
+    🟡 if (value < 0) result = "Freezing";
+    🟡 else if (value >= 0 && value <= 10) result = "Cold";
+    🟡 else if (value >= 11 && value <= 20) result = "Mild";
+    🟡 else if (value >= 21 && value <= 30) result = "Warm";
+    🟡 else result = "Hot";
+    
+    // 3. 🔴 عرض النتيجة
+    🔴 MessageBox.Show("Result: " + result);
+🔴 }
+
+========================================
+القالب 3: مصفوفات (أرقام مفصولة بمسافات)
+========================================
+
+🔴 private void button_Click(object sender, EventArgs e)
+🔴 {
+    // 1. 🔴 قراءة المدخلات
+    🔴 string input = textBox1.Text;
+    🔴 string[] parts = input.Split(' ');
+    🔴 int[] numbers = new int[parts.Length];
+    
+    🔴 for (int i = 0; i < parts.Length; i++)
+    🔴 {
+        🔴 numbers[i] = int.Parse(parts[i]);
+    🔴 }
+    
+    // 2. 🟢 المعالجة
+    🟢 int sum = 0;
+    🟡 for (int i = 0; i < numbers.Length; i++)
+    🟡 {
+        🟢 sum = sum + numbers[i];
+    🟡 }
+    
+    // 3. 🔴 عرض النتيجة
+    🔴 MessageBox.Show("Sum: " + sum);
+🔴 }
+
+========================================
+القالب 4: مصفوفات ثابتة (من عدة TextBoxes)
+========================================
+
+🔴 private void button_Click(object sender, EventArgs e)
+🔴 {
+    🔴 try
+    🔴 {
+        🔴 double[] arr = new double[5];
+        🔴 arr[0] = double.Parse(textBox1.Text);
+        🔴 arr[1] double.Parse(textBox2.Text);
+        🔴 arr[2] double.Parse(textBox3.Text);
+        🔴 arr[3] double.Parse(textBox4.Text);
+        🔴 arr[4] double.Parse(textBox5.Text);
+        
+        🟢 double min = arr[0];
+        🟢 double max = arr[0];
+        🟢 double sum = 0;
+        
+        🟡 for (int i = 0; i < arr.Length; i++)
+        🟡 {
+            🟢 sum = sum + arr[i];
+            🟢 if (arr[i] < min) min = arr[i];
+            🟢 if (arr[i] > max) max = arr[i];
+        🟡 }
+        
+        🟢 double average = sum / arr.Length;
+        🟢 Array.Sort(arr);
+        
+        🔴 minLabel.Text = min.ToString();
+        🔴 maxLabel.Text = max.ToString();
+        🔴 averageLabel.Text = average.ToString();
+        
+        🔴 foreach (double x in arr)
+        🔴 {
+            🔴 listBox1.Items.Add(x);
+        🔴 }
+    🔴 }
+    🔴 catch
+    🔴 {
+        🔴 MessageBox.Show("enter correct value");
+    🔴 }
+🔴 }
+
+========================================
+القالب 5: عمليات على مدى
+========================================
+
+🔴 private void button_Click(object sender, EventArgs e)
+🔴 {
+    // 1. 🔴 قراءة المدخلات
+    🔴 int start = int.Parse(textBox1.Text);
+    🔴 int end = int.Parse(textBox2.Text);
+    
+    // 2. 🟢 المعالجة
+    🟢 int sum = 0;
+    🟡 for (int i = start; i <= end; i++)
+    🟡 {
+        🟢 if (i % 2 == 0)
+        {
+            🟢 sum = sum + i;
+        }
+    🟡 }
+    
+    // 3. 🔴 عرض النتيجة
+    🔴 MessageBox.Show("Sum of evens: " + sum);
+🔴 }
+
+========================================
+القالب 6: تحويل وحدات
+========================================
+
+🔴 private void button_Click(object sender, EventArgs e)
+🔴 {
+    // 1. 🔴 قراءة المدخلات
+    🔴 int value = int.Parse(textBox1.Text);
+    
+    // 2. 🔴 التحقق من صحة المدخل
+    🔴 if (value <= 0)
+    🔴 {
+        🔴 MessageBox.Show("Enter positive number");
+        🔴 return;
+    🔴 }
+    
+    // 3. 🟢 المعالجة
+    🟢 int result1 = value / 7;
+    🟢 int result2 = value % 7;
+    
+    // 4. 🔴 عرض النتيجة
+    🔴 MessageBox.Show(result1 + " weeks and " + result2 + " days");
+🔴 }
+
+========================================
+القالب 7: Method ترجع قيمة
+========================================
+
+🟢 private double Area(double r)
+🟢 {
+    🟢 double area = Math.PI * Math.Pow(r, 2);
+    🟢 return area;
+🟢 }
+
+🔴 private void button_Click(object sender, EventArgs e)
+🔴 {
+    🔴 if (double.TryParse(textBox1.Text, out double r))
+    🔴 {
+        🟢 double result = Area(r);
+        🔴 resultLabel.Text = result.ToString();
+    🔴 }
+    🔴 else
+    🔴 {
+        🔴 MessageBox.Show("Please enter a valid number");
+    🔴 }
+🔴 }
+
+========================================
+القالب 8: البحث في مصفوفة
+========================================
+
+🔴 private void button_Click(object sender, EventArgs e)
+🔴 {
+    // 1. 🔴 قراءة المدخلات
+    🔴 string search = textBox1.Text;
+    
+    // 2. 🟢 المعالجة
+    🟢 string[] items = { "Lama", "Fahad", "Noor", "Sami" };
+    🟢 int index = Array.IndexOf(items, search);
+    
+    // 3. 🟡 عرض النتيجة
+    🟡 if (index != -1)
+    🟡 {
+        🔴 MessageBox.Show("Found at index: " + index);
+    🟡 }
+    🟡 else
+    🟡 {
+        🔴 MessageBox.Show("Not found");
+    🟡 }
+🔴 }
+
+========================================
+القالب 9: عد الحروف في نص
+========================================
+
+🔴 private void button_Click(object sender, EventArgs e)
+🔴 {
+    // 1. 🔴 قراءة المدخلات
+    🔴 string text = textBox1.Text;
+    
+    // 2. 🟢 المعالجة
+    🟢 int count = 0;
+    🟡 for (int i = 0; i < text.Length; i++)
+    🟡 {
+        🟢 if (text[i] == 'a' || text[i] == 'e' || text[i] == 'i' || text[i] == 'o' || text[i] == 'u')
+        🟢 {
+            🟢 count++;
+        🟢 }
+    🟡 }
+    
+    // 3. 🔴 عرض النتيجة
+    🔴 resultLabel.Text = count.ToString();
+🔴 }
+
+========================================
+ملخص العلامات:
+========================================
+
+🔴 = أساس (لا يتغير، احفظه)
+🟡 = فهم (الهيكل يبقى، لكن القيم تتغير)
+🟢 = يتغير (حسب السؤال)
