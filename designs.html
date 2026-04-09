@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Design Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf9f8;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #4a4a4a;
+            letter-spacing: 2px;
+        }
+        p.subtitle {
+            font-size: 1.2em;
+            color: #888;
+        }
+        .section-title {
+            font-size: 2em;
+            margin: 50px 0 30px;
+            color: #8a7b9d;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            page-break-inside: avoid; /* Prevents images from splitting across PDF pages */
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .caption {
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #666;
+        }
+        
+        /* Adjust for print */
+        @media print {
+            body { background-color: #ffffff; }
+            .card { box-shadow: none; border: 1px solid #f0f0f0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ram's Design Portfolio</h1>
+        <p class="subtitle">A Curated Collection of Custom Art & Announcements</p>
+    </header>
+
+    <div class="section-title">Custom Borders & Artwork</div>
+    <div class="grid">
+        <div class="card">
+            <img src="IMG-20260409-WA0413.jpg" alt="Lavender Border">
+            <div class="caption">Lavender & Greenery Frame</div>
+        </div>
+        <div class="card">
+            <img src="IMG-20260409-WA0400.jpg" alt="Purple Floral">
+            <div class="caption">Soft Purple Watercolor Floral</div>
+        </div>
+        <div class="card">
+            <img src="IMG-20260409-WA0403.jpg" alt="Pink Lilac Floral">
+            <div class="caption">Pink Peony & Lilac Border</div>
+        </div>
+        <div class="card">
+            <img src="IMG-20260409-WA0407.jpg" alt="Ain Letter Art">
+            <div class="caption">Custom Typography - Letter Ain (ع)</div>
+        </div>
+    </div>
+
+    <div class="section-title">Baby Announcements</div>
+    <div class="grid">
+        <div class="card">
+            <img src="IMG-20260409-WA0415.jpg" alt="Lana Announcement">
+            <div class="caption">Lana - Wildflower Theme</div>
+        </div>
+        <div class="card">
+            <img src="IMG-20260409-WA0401.jpg" alt="Sama Announcement">
+            <div class="caption">Sama - Cloud & Sky Theme</div>
+        </div>
+        <div class="card">
+            <img src="IMG-20260409-WA0414.jpg" alt="Yasmine Announcement">
+            <div class="caption">Yasmine - Purple Blossom Theme</div>
+        </div>
+        <div class="card">
+            <img src="IMG-20260409-WA0416.jpg" alt="Hassan Announcement 1">
+            <div class="caption">Hassan - Classic Beige Theme</div>
+        </div>
+        <div class="card">
+            <img src="IMG-20260409-WA0417.jpg" alt="Hassan Announcement 2">
+            <div class="caption">Hassan - White Floral Theme</div>
+        </div>
+        <div class="card">
+            <img src="IMG-20260409-WA0418.jpg" alt="Abdulaziz Announcement">
+            <div class="caption">Abdulaziz - Vintage Green Theme</div>
+        </div>
+    </div>
+
+</body>
+</html>
